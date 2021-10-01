@@ -4,7 +4,7 @@ set -euxo pipefail
 
 cd /opt/kolla
 source venv/bin/activate
-
+#hi
 kolla-ansible -i multinode deploy
 kolla-ansible -i multinode post-deploy
 deactivate nondestructive
