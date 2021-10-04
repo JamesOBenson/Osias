@@ -33,6 +33,8 @@ cp "$HOME"/tempest.conf "$HOME"/refstack-client/etc/tempest.conf
 
 source .venv/bin/activate
 #refstack-client test -c etc/tempest.conf -v -- --regex tempest.api.identity.v3.test_tokens.TokensV3Test.test_create_token
+# Fix the github error <AttributeError: module jsonschema has no attribute compat>
+pip install --upgrade jsonschema 
 
 if [[ "$VM_POOL" == "VM_POOL_DISABLED" ]]; then
     wget "https://refstack.openstack.org/v1/guidelines/${REFSTACK_TEST_VERSION}.json/tests?target=platform&type=required&alias=true&flag=false" -O /tmp/platform."${REFSTACK_TEST_VERSION}"-test-list.txt
