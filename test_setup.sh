@@ -30,7 +30,7 @@ CIRROSID2="$(openstack image list -f value -c ID --name CirrOS-2)"
 PUBLICNETWORKID="$(openstack network list --external -c ID -f value)"
 PUBLICNETWORKNAME="$(openstack network list --external -c Name -f value)"
 URILINKV2="$(openstack endpoint list --service identity --interface public -c URL -f value)/v2.0"
-URILINKV3="$(openstack endpoint list --service identity --interface public -c URL -f value)/v3"
+URILINKV3="$(openstack endpoint list --service identity --interface public -c URL -f value)/"
 REGION="$(openstack region list -c Region -f value)"
 MIN_COMPUTE_NODES="$(openstack compute service list -f value -c Host --service nova-compute | wc -l)"
 
